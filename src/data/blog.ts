@@ -1,15 +1,12 @@
 // ---------------------------------------------------------------------------
-// TEMPLATE — Tier 3 informational content. Blog posts like these build
-// topical authority and capture early-stage searchers who aren't ready to
-// request a quote yet.
-//
-// The 2 example posts below are landscaping/Utah-flavored ONLY to show the
-// pattern working end to end (a real regional fact, cited plainly, tied to a
-// related service) — replace both entirely with real, researched questions
-// and facts for the new client's actual trade and region. Never invent
-// regional facts (rebate amounts, code requirements, climate specifics) —
-// research them for real, or mark clearly as [NEEDS INPUT].
+// Tier 3 informational content for Xtreme Roofing — real, researched
+// questions homeowners search before they're ready to request a quote.
+// Regional facts (climate, monsoon season timing) are general, well-
+// established facts about the Las Vegas valley; no fabricated statistics,
+// prices, or code citations.
 // ---------------------------------------------------------------------------
+
+import type { ProjectImage } from "./siteConfig";
 
 export type BlogSection = { heading?: string; paragraphs: string[] };
 
@@ -18,70 +15,85 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   publishedAt: string;
+  image: ProjectImage;
   sections: BlogSection[];
   relatedServiceSlugs: string[];
 };
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "example-post-one",
-    title: "[REPLACE] A real, researched informational question",
+    slug: "how-long-does-a-roof-last-in-las-vegas-heat",
+    title: "How long does a roof actually last in Las Vegas heat?",
     excerpt:
-      "[REPLACE] One-sentence summary of the answer, written to earn a click.",
-    publishedAt: "2026-03-02",
+      "Manufacturer warranties assume a mild climate. Las Vegas sun, heat, and monsoon storms shorten that timeline — here's what actually determines how long your roof holds up.",
+    publishedAt: "2026-07-14",
+    image: { kind: "real", src: "/images/project/xtreme-crew-blog-feature.png", alt: "Xtreme Roofing crew re-roofing a home in the Las Vegas heat" },
     sections: [
       {
         paragraphs: [
-          "[REPLACE] Opening paragraph answering the question directly. Example pattern shown below (landscaping/Utah-flavored) demonstrates citing a real, specific regional fact plainly instead of vague filler.",
+          "Las Vegas gets close to 300 sunny days a year and summer highs that regularly sit above 105°F. A dark asphalt shingle roof in direct sun can run 50-70°F hotter than the surrounding air temperature — meaning a roof surface can realistically hit 150°F or more on a summer afternoon. That heat and UV exposure is the single biggest factor in how long a roof actually lasts here, and it's a different equation than in a milder climate.",
         ],
       },
       {
-        heading: "[REPLACE] A real sub-question",
+        heading: "Why the warranty number and the real-world number don't match",
         paragraphs: [
-          "Example: \"The Salt Lake Valley sits in USDA hardiness zone 6b–7a, which gives new grass two realistic windows to get established: spring and early fall.\" — this is the level of specificity to aim for: a real, checkable fact, not a generic claim.",
+          "Architectural asphalt shingles are commonly warrantied for 25-30 years, and that number assumes moderate climate conditions. In extreme heat and UV climates like Las Vegas, most roofers see asphalt shingles fall short of that — the constant heat cycling (baking all day, cooling at night) accelerates the breakdown of the asphalt and granule loss well before the warranty period is up. Attic ventilation makes a real difference here: a poorly ventilated attic bakes the underside of the roof deck along with the top side, and that shortens shingle life further.",
         ],
       },
       {
-        heading: "[REPLACE] What actually determines the outcome",
+        heading: "Tile roofs age differently than shingle roofs",
         paragraphs: [
-          "[REPLACE] A paragraph tying the informational answer back to why professional work matters here, without being a hard sales pitch.",
+          "Concrete and clay tile are common in Las Vegas partly because the tile itself can last 50 years or more — it's not the material that fails first. It's almost always the underlayment beneath the tile, which typically needs replacing every 20-25 years even though the tile on top still looks fine. If a tile roof is leaking, the tile itself is rarely the problem; it's usually the underlayment or flashing underneath.",
+        ],
+      },
+      {
+        heading: "What actually determines your roof's lifespan",
+        paragraphs: [
+          "Material choice, attic ventilation, and the quality of the original installation (flashing details, underlayment, fastening) matter more than the warranty sticker. A roof inspection can tell you which of those factors are working against your specific roof, and whether you're looking at years of life left or a replacement that makes more sense than another round of repairs.",
         ],
       },
     ],
-    relatedServiceSlugs: ["landscape-design-build"],
+    relatedServiceSlugs: ["roof-replacement", "roof-repair"],
   },
   {
-    slug: "example-post-two",
-    title: "[REPLACE] Cost-factors style post — explain factors, don't invent a price",
+    slug: "what-determines-roof-replacement-cost-las-vegas",
+    title: "What actually determines the cost of a roof replacement?",
     excerpt:
-      "[REPLACE] One-sentence summary. Note: never quote a fabricated price/rate — explain what drives cost instead, and point to a real quote.",
-    publishedAt: "2026-03-09",
+      "There's no honest flat price for a roof replacement sight unseen. Here's what actually moves the number, so you know what you're being quoted for.",
+    publishedAt: "2026-07-28",
+    image: { kind: "real", src: "/images/project/xtreme-crew-tile-reroof-1.png", alt: "Xtreme Roofing crew and trucks on site for a roof replacement" },
     sections: [
       {
         paragraphs: [
-          "[REPLACE] Opening paragraph explaining why a flat price is misleading, without inventing a fake price range.",
+          "Any roofer who gives you a firm price over the phone, before seeing the roof, is guessing. A roof replacement quote depends on several things that only show up during an actual inspection — which is why we quote on-site instead of over the phone. Here's what actually drives the number up or down.",
         ],
       },
       {
-        heading: "[REPLACE] Factor 1",
+        heading: "Roof size, pitch, and complexity",
         paragraphs: [
-          "[REPLACE] Explain a real factor that drives cost up or down for this trade.",
+          "A simple, low-pitch roof with few penetrations costs less to work on than a steep, cut-up roof with multiple valleys, dormers, and chimneys — more cuts, more flashing detail, and more time on every part of the job. Square footage matters, but shape and pitch usually move the price more than size alone.",
         ],
       },
       {
-        heading: "[REPLACE] Factor 2",
+        heading: "Material — shingle, tile, or a low-slope system",
         paragraphs: [
-          "[REPLACE] Explain another real factor.",
+          "Architectural asphalt shingles, concrete or clay tile, and low-slope membrane systems (for flat or near-flat sections) all have different material and labor costs. Tile in particular costs more upfront but holds up structurally for decades; shingle costs less upfront and needs replacing sooner. Neither is the 'right' answer for every roof — it depends on the home, HOA requirements, and budget.",
+        ],
+      },
+      {
+        heading: "What the tear-off reveals",
+        paragraphs: [
+          "You can't always tell what's under the existing roofing material until it comes off. Rotted decking, old ventilation problems, or damaged framing all add cost — but they're also things you'd rather find and fix now than have them cause a leak two years after a new roof goes on. A trustworthy roofer shows you the damage and gets your sign-off before doing that extra work, not after.",
         ],
       },
       {
         heading: "The honest answer",
         paragraphs: [
-          "[REPLACE] Close with an honest \"here's why we quote on-site instead of over the phone\" paragraph and a link/CTA to request a real quote.",
+          "We quote on-site because a real inspection is the only way to give you a number that actually holds once the work starts. If you want to know what your specific roof will cost to replace, the fastest path is a free inspection — call (702) 750-2622 or request a quote online.",
         ],
       },
     ],
-    relatedServiceSlugs: ["paver-patio-installation"],
+    relatedServiceSlugs: ["roof-replacement", "commercial-roof-replacement"],
   },
 ];
 

@@ -28,7 +28,7 @@ export default function CityView({ slug }: { slug: string }) {
       <PageHero
         eyebrow={business.serviceRegion}
         title={city.name}
-        subtitle={`[REPLACE] One-line description of services offered for homeowners in ${city.name} and nearby.`}
+        subtitle={`Residential & commercial roof replacement, repair, and storm damage restoration for ${city.name} and the surrounding area.`}
         image={city.hero}
       />
 

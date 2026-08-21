@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/Container";
-import PageHero from "@/components/PageHero";
+import VideoHero from "@/components/VideoHero";
 import TrustBadges from "@/components/TrustBadges";
 import WhyChooseCollage from "@/components/WhyChooseCollage";
 import ProjectCarousel, { type CarouselItem } from "@/components/ProjectCarousel";
@@ -14,28 +14,23 @@ import Reveal from "@/components/Reveal";
 import { buildMetadata } from "@/lib/seo";
 import { buildFaqPageJsonLd } from "@/lib/jsonld";
 import { business, subServices, categories, homeFaqs } from "@/data/siteConfig";
-import type { ProjectImage } from "@/data/siteConfig";
-
-const heroImage: ProjectImage = { kind: "placeholder", label: "Homepage hero photo" };
-const missionImage: ProjectImage = { kind: "placeholder", label: "Mission section photo" };
 
 export const metadata = buildMetadata({
-  title: "[REPLACE] Primary keyword — e.g. Hardscape & landscape construction",
-  description: `[REPLACE] ${business.tagline} Free estimates.`,
+  title: "Las Vegas roof replacement, repair & storm damage restoration",
+  description: `${business.tagline} Free estimates.`,
   path: "/",
 });
 
-// [REPLACE] These must match real slugs in src/data/siteConfig.ts (subServices).
 const popularServiceSlugs = [
-  "paver-patio-installation",
-  "landscape-design-build",
+  "roof-replacement",
+  "roof-repair",
 ];
 
 const carouselSlugs = [
-  "landscape-design-build",
-  "irrigation-system-installation",
-  "paver-patio-installation",
-  "concrete-patio-installation",
+  "roof-replacement",
+  "roof-repair",
+  "storm-hail-damage-insurance-claims",
+  "commercial-roof-replacement",
 ];
 
 export default function HomePage() {
@@ -56,14 +51,11 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Once real hero video footage exists, swap this PageHero for
-          VideoHero (src="/videos/your-video.mp4") — same props, full-bleed
-          video background instead of a static photo. */}
-      <PageHero
+      <VideoHero
+        src="/videos/hero-trucks-arriving.mp4"
         eyebrow={business.serviceRegion}
-        title="[REPLACE] Primary headline — what you build/do, benefit-focused"
+        title="Roofing done right — residential & commercial, start to finish"
         subtitle={business.tagline}
-        image={heroImage}
       />
 
       <Container className="py-10">
@@ -76,8 +68,8 @@ export default function HomePage() {
       <Container className="py-14">
         <Reveal>
           <WhyChooseCollage
-            imageLeft={{ kind: "placeholder", label: "Homepage collage photo (left)" }}
-            imageRight={{ kind: "placeholder", label: "Homepage collage photo (right)" }}
+            imageLeft={{ kind: "real", src: "/images/project/roof-replacement-tearoff.webp", alt: "Roofing crew mid-replacement on a residential home" }}
+            imageRight={{ kind: "real", src: "/images/project/commercial-metal-roof-install.jpg", alt: "Commercial roofing crew installing a low-slope roof" }}
           />
         </Reveal>
       </Container>
@@ -114,8 +106,9 @@ export default function HomePage() {
             <h2 className="text-2xl font-extrabold text-ink">Why homeowners choose us</h2>
             <div className="mt-2 h-0.5 w-16 bg-rust" />
             <p className="mt-4 text-ink-soft">
-              [REPLACE] Short paragraph: what this business does, for whom, and its core promise
-              (free consultations, honest quotes, owner-involved, etc.).
+              Xtreme Roofing handles residential and commercial roofing across the Las Vegas
+              valley — free inspections, written estimates before any work starts, and one team
+              from the first walkthrough to the final cleanup.
             </p>
             <h3 className="mt-6 text-sm font-bold tracking-wide text-ink">
               Popular services
@@ -142,7 +135,7 @@ export default function HomePage() {
 
           <div>
             <h2 className="text-2xl font-extrabold text-ink">
-              [REPLACE] Section headline — e.g. &ldquo;Comprehensive service solutions&rdquo;
+              Full-service roofing, residential & commercial
             </h2>
             <div className="mt-2 h-0.5 w-16 bg-rust" />
             <div className="mt-6 space-y-5">
@@ -182,19 +175,27 @@ export default function HomePage() {
 
       {/* Mission statement */}
       <section className="relative overflow-hidden py-24">
-        <ProjectPhoto image={missionImage} fill />
+        <video
+          src="/videos/roof-replacement-luxury-home.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-ink/70" />
         <Container className="relative text-center">
           <Reveal>
             <Image
-              src="/logo.png"
+              src="/logo-white.png"
               alt={`${business.name} logo`}
-              width={1944}
-              height={1166}
+              width={321}
+              height={147}
               className="mx-auto h-16 w-auto object-contain"
             />
             <span className="mt-4 block text-sm font-bold tracking-wide text-rust">
-              [REPLACE] Short eyebrow line — e.g. &ldquo;Your vision, our expertise&rdquo;
+              Roofing built to last
             </span>
             <p className="mx-auto mt-3 max-w-2xl text-xl font-semibold text-white">
               {business.tagline}

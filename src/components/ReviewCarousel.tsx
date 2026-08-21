@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-type Review = { quote: string; name: string; rating: number };
+type Review = { quote: string; name: string; source: string; rating: number };
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -49,7 +49,7 @@ export default function ReviewCarousel({ items }: { items: Review[] }) {
             <figcaption className="flex items-center gap-2 text-sm font-semibold text-ink">
               {t.name}
               <span className="rounded bg-limestone-dark px-2 py-0.5 text-xs font-normal text-ink-soft">
-                Google Review
+                {t.source}
               </span>
             </figcaption>
           </figure>

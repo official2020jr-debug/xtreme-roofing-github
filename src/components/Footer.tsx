@@ -14,11 +14,11 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="min-w-0">
             <Image
-              src="/logo.png"
+              src="/logo-white.png"
               alt={`${business.name} logo`}
-              width={1944}
-              height={1166}
-              className="h-20 w-auto object-contain"
+              width={321}
+              height={147}
+              className="h-16 w-auto object-contain"
             />
             <div className="mt-4 flex flex-col gap-2.5 text-sm">
               <PhoneLink className="flex items-center gap-2 font-bold text-white hover:text-rust">

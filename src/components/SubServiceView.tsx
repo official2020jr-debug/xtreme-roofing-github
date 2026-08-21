@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "./Container";
 import PageHero from "./PageHero";
+import VideoHero from "./VideoHero";
 import ProjectPhoto from "./ProjectPhoto";
 import FAQ from "./FAQ";
 import CTASection from "./CTASection";
@@ -32,12 +33,21 @@ export default function SubServiceView({ slug }: { slug: string }) {
       <JsonLd data={buildFaqPageJsonLd(service.faqs)} />
       <JsonLd data={buildServiceJsonLd(service)} />
 
-      <PageHero
-        eyebrow={business.serviceRegion}
-        title={service.name}
-        subtitle={service.oneLiner}
-        image={service.hero}
-      />
+      {service.heroVideo ? (
+        <VideoHero
+          src={service.heroVideo}
+          eyebrow={business.serviceRegion}
+          title={service.name}
+          subtitle={service.oneLiner}
+        />
+      ) : (
+        <PageHero
+          eyebrow={business.serviceRegion}
+          title={service.name}
+          subtitle={service.oneLiner}
+          image={service.hero}
+        />
+      )}
 
       <Container className="grid gap-12 py-14 lg:grid-cols-[1.6fr_1fr]">
         <div className="space-y-10">

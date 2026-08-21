@@ -64,11 +64,11 @@ export default function LeadForm({
       {dark && !compact && (
         <div className="mb-4 flex flex-col items-center text-center">
           <Image
-            src="/logo.png"
+            src="/logo-white.png"
             alt={`${business.name} logo`}
-            width={1944}
-            height={1166}
-            className="h-16 w-auto object-contain"
+            width={321}
+            height={147}
+            className="h-14 w-auto object-contain"
           />
         </div>
       )}

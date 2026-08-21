@@ -11,12 +11,12 @@ import { buildBreadcrumbJsonLd } from "@/lib/jsonld";
 import { differentiators, business } from "@/data/siteConfig";
 
 export const metadata = buildMetadata({
-  title: `About us — meet ${business.ownerName}`,
-  description: `[REPLACE] Meet ${business.ownerName}, the owner behind every ${business.name} project in ${business.serviceRegion}. One accountable person from your first walkthrough to the final one — not a rotating crew.`,
+  title: "About us",
+  description: `Meet ${business.name} — a locally based residential and commercial roofing team serving ${business.serviceRegion}.`,
   path: "/about",
 });
 
-const heroImage = { kind: "placeholder" as const, label: "About page hero photo" };
+const heroImage = { kind: "real" as const, src: "/images/project/xtreme-crew-tile-reroof-2.png", alt: "The Xtreme Roofing crew at work on a roof" };
 
 export default function AboutPage() {
   return (
@@ -30,8 +30,8 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow={`About ${business.shortName}`}
-        title={`One name behind every ${business.shortName} project: ${business.ownerName}`}
-        subtitle="Not a sales team, not a call center — the same person who bids your job is the person who builds it."
+        title={`The team behind every ${business.shortName} project`}
+        subtitle="Not a call center dispatching subcontractors — the same team that inspects your roof and writes the scope is the team that shows up to do the work."
         image={heroImage}
       />
 
@@ -43,34 +43,26 @@ export default function AboutPage() {
         <Reveal>
           <div className="mx-auto max-w-3xl space-y-4 text-ink-soft">
             <p>
-              [REPLACE] A real 2-3 paragraph founder story — why they started the business, what
-              they were frustrated by in the industry, and what running it differently actually
-              looks like day to day. Use specifics, not generic claims. If real reviews repeatedly
-              name the owner, quote that pattern here — it&apos;s what makes an about page read as
-              a real business instead of a template.
+              Xtreme Roofing is based in Las Vegas at 6135 Harrison Dr, and works residential and
+              commercial roofs across the valley — Henderson, Summerlin, North Las Vegas, Spring
+              Valley, Sunrise Manor, and Enterprise included. We handle roof replacement, repair,
+              storm and hail damage restoration with insurance claim support, and new construction
+              roofing, so most property owners only need one call regardless of what the roof
+              needs.
             </p>
             <p>
-              [REPLACE] A paragraph on what the owner personally does on a typical project — the
-              walkthrough, the design, being on site for key milestones. Concrete details beat
-              adjectives.
+              Every job starts with a free inspection, not a sales pitch. We check the decking,
+              flashing, and ventilation, document what we find, and give you a written estimate
+              before anything is scheduled. If a repair will genuinely hold up, we say so instead
+              of pushing a replacement — and if a roof is past that point, we explain exactly why.
             </p>
             <p>
-              [REPLACE] A paragraph on the technical/quality standard the business holds itself to
-              — something specific to the trade and region (code requirements, material specs,
-              climate considerations) that signals real expertise.
+              Materials and installation details are specced for what actually wears out a roof in
+              this climate: triple-digit summer heat, constant UV exposure, and monsoon-season wind
+              and hail. That means getting ventilation and underlayment right, not just laying down
+              new shingles or tile over the same problems that were there before.
             </p>
           </div>
-        </Reveal>
-      </Container>
-
-      <Container className="pb-4">
-        <Reveal>
-          <blockquote className="mx-auto max-w-3xl border-l-4 border-rust bg-limestone-dark p-6 text-lg italic text-ink">
-            &ldquo;[REPLACE — a real, pasted Google review quote, not invented]&rdquo;
-            <footer className="mt-3 text-sm font-semibold not-italic text-ink-soft">
-              — [Reviewer name], real Google review
-            </footer>
-          </blockquote>
         </Reveal>
       </Container>
 

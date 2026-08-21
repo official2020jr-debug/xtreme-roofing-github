@@ -10,11 +10,11 @@ import { business } from "@/data/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Blog",
-  description: `[REPLACE] Answers to real questions homeowners ask before starting a project with ${business.name}.`,
+  description: `Answers to real questions homeowners and businesses ask before a roofing project with ${business.name}.`,
   path: "/blog",
 });
 
-const heroImage = { kind: "placeholder" as const, label: "Blog page hero photo" };
+const heroImage = { kind: "real" as const, src: "/images/project/xtreme-crew-blog-feature.png", alt: "Xtreme Roofing crew re-roofing a Las Vegas home" };
 
 export default function BlogPage() {
   return (
@@ -28,8 +28,8 @@ export default function BlogPage() {
 
       <PageHero
         eyebrow={business.serviceRegion}
-        title="[REPLACE] Questions, answered honestly"
-        subtitle="[REPLACE] The real questions homeowners/customers ask before starting a project."
+        title="Questions, answered honestly"
+        subtitle="What homeowners and businesses actually ask before a roofing project in Las Vegas."
         image={heroImage}
       />
 

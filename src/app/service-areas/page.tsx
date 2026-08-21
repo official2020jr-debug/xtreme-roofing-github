@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   path: "/service-areas",
 });
 
-const heroImage = { kind: "placeholder" as const, label: "Service areas page hero photo" };
+const heroImage = { kind: "real" as const, src: "/images/project/aerial-shingle-roof-1.jpg", alt: "Aerial view of a roof in the Las Vegas valley" };
 
 export default function ServiceAreasPage() {
   return (

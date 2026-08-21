@@ -10,11 +10,11 @@ import { business, testimonials } from "@/data/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Reviews",
-  description: `Real Google reviews from ${business.name} customers in ${business.serviceRegion} — read them all, then leave your own.`,
+  description: `Real customer reviews for ${business.name} in ${business.serviceRegion} — read them all, then leave your own.`,
   path: "/reviews",
 });
 
-const heroImage = { kind: "placeholder" as const, label: "Reviews page hero photo" };
+const heroImage = { kind: "real" as const, src: "/images/project/aerial-shingle-roof-2.jpg", alt: "Aerial view of a completed roofing project" };
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -49,7 +49,7 @@ export default function ReviewsPage() {
       <PageHero
         eyebrow={business.serviceRegion}
         title="What our customers say"
-        subtitle={`Every review below is real, pulled from ${business.name}'s Google Business Profile — ${testimonials.length} and counting.`}
+        subtitle={`Real reviews from ${business.name} customers — ${testimonials.length} and counting.`}
         image={heroImage}
       />
 
@@ -61,8 +61,8 @@ export default function ReviewsPage() {
         <Reveal>
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
             <p className="text-ink-soft">
-              We don&apos;t hand-pick a handful of quotes — this is every written review on our
-              Google listing. Had a good experience with us?
+              These are real reviews from real customers, pulled from our Google, Yelp, and Angi
+              listings. Had a good experience with us?
             </p>
             <a
               href={business.googleReviewUrl}
@@ -84,7 +84,7 @@ export default function ReviewsPage() {
                 <figcaption className="flex items-center gap-2 text-sm font-semibold text-ink">
                   {t.name}
                   <span className="rounded bg-limestone-dark px-2 py-0.5 text-xs font-normal text-ink-soft">
-                    Google review
+                    {t.source}
                   </span>
                 </figcaption>
               </figure>

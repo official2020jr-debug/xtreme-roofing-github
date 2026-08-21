@@ -14,22 +14,25 @@ import type { ProjectImage } from "@/data/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Our work",
-  description: `[REPLACE] Real finished projects from ${business.name} in ${business.serviceRegion}.`,
+  description: `Completed roofing projects from ${business.name} in ${business.serviceRegion}.`,
   path: "/projects",
 });
 
-const heroImage: ProjectImage = { kind: "placeholder", label: "Projects page hero photo" };
+const heroImage: ProjectImage = {
+  kind: "real",
+  src: "/images/project/roof-replacement-tearoff.webp",
+  alt: "Roofing crew working on a residential roof replacement",
+};
 
-// [REPLACE] Once real project photos exist, swap these placeholders for
-// `{ kind: "real", src: "/images/project/....jpg", alt: "..." }` entries.
-// Keep real width/height on real photos so the masonry grid doesn't shift.
 const photos: ProjectImage[] = [
-  { kind: "placeholder", label: "Project photo 1" },
-  { kind: "placeholder", label: "Project photo 2" },
-  { kind: "placeholder", label: "Project photo 3" },
-  { kind: "placeholder", label: "Project photo 4" },
-  { kind: "placeholder", label: "Project photo 5" },
-  { kind: "placeholder", label: "Project photo 6" },
+  { kind: "real", src: "/images/project/xtreme-crew-tile-reroof-1.png", alt: "Xtreme Roofing crew re-roofing a Las Vegas home" },
+  { kind: "real", src: "/images/project/roof-replacement-tearoff.webp", alt: "Full tear-off during a residential roof replacement" },
+  { kind: "real", src: "/images/project/commercial-tpo-roof-install.jpg", alt: "Commercial low-slope roof membrane installation" },
+  { kind: "real", src: "/images/project/xtreme-crew-shingle-reroof.png", alt: "Xtreme Roofing crew installing a shingle roof" },
+  { kind: "real", src: "/images/project/aerial-shingle-roof-2.jpg", alt: "Aerial view of a residential roof" },
+  { kind: "real", src: "/images/project/commercial-metal-roof-install.jpg", alt: "Commercial roofing crew installing membrane roofing" },
+  { kind: "real", src: "/images/project/xtreme-crew-tile-reroof-2.png", alt: "Xtreme Roofing crew working on a tile roof" },
+  { kind: "real", src: "/images/project/aerial-shingle-roof-1.jpg", alt: "Aerial view of a completed asphalt shingle roof" },
 ];
 
 export default function ProjectsPage() {
@@ -45,7 +48,7 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow={business.serviceRegion}
         title="See our work"
-        subtitle="[REPLACE] Every photo below is a real project — no stock photography, no renderings."
+        subtitle="Residential and commercial roofing work — no renderings, no mockups."
         image={heroImage}
       />
 
@@ -56,8 +59,8 @@ export default function ProjectsPage() {
       <Container className="py-4">
         <Reveal>
           <p className="mx-auto max-w-3xl text-center text-ink-soft">
-            [REPLACE] Short intro line about the range of work shown below — browse the finished
-            work, then{" "}
+            Residential and commercial roof replacements, repairs, and storm damage restorations
+            across the Las Vegas valley. Browse the work below, then{" "}
             <Link href="/contact" className="font-semibold text-rust hover:underline">
               request a free quote
             </Link>{" "}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "./Container";
 import CTASection from "./CTASection";
+import ProjectPhoto from "./ProjectPhoto";
 import JsonLd from "./JsonLd";
 import { getBlogPost } from "@/data/blog";
 import { getSubService, business } from "@/data/siteConfig";
@@ -31,6 +32,13 @@ export default function BlogPostView({ slug }: { slug: string }) {
           <span className="text-sm font-bold tracking-wide text-rust">{business.name} blog</span>
           <h1 className="mt-2 text-3xl font-extrabold text-ink sm:text-4xl">{post.title}</h1>
           <p className="mt-4 text-lg text-ink-soft">{post.excerpt}</p>
+
+          <ProjectPhoto
+            image={post.image}
+            className="mt-8 aspect-video rounded-lg"
+            sizes="(min-width: 768px) 768px, 100vw"
+            priority
+          />
 
           <div className="mt-10 space-y-8">
             {post.sections.map((section, i) => (

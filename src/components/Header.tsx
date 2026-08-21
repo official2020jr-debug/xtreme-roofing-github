@@ -14,12 +14,12 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-3 py-1">
           <Image
-            src="/logo.png"
+            src="/logo-white.png"
             alt={`${business.name} logo`}
-            width={1944}
-            height={1166}
+            width={321}
+            height={147}
             priority
-            className="h-14 w-auto object-contain sm:h-16"
+            className="h-12 w-auto object-contain sm:h-14"
           />
         </Link>
 
@@ -35,8 +35,8 @@ export default function Header() {
                 <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
               </svg>
             </button>
-            <div className="invisible absolute left-1/2 top-full z-50 w-[min(90vw,56rem)] -translate-x-1/2 rounded-md border border-black/10 bg-white p-6 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <div className="grid grid-cols-4 gap-6">
+            <div className="invisible absolute left-1/2 top-full z-50 w-max max-w-[90vw] -translate-x-1/2 rounded-md border border-black/10 bg-white p-6 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="grid grid-flow-col auto-cols-[13rem] gap-8">
                 {categories.map((cat) => (
                   <div key={cat.slug}>
                     <Link

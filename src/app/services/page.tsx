@@ -11,11 +11,11 @@ import { categories, getSubServicesForCategory, business } from "@/data/siteConf
 
 export const metadata = buildMetadata({
   title: "Services",
-  description: `[REPLACE] Full list of services offered by ${business.name} in ${business.serviceRegion}. Free estimates on every project.`,
+  description: `Full list of residential and commercial roofing services offered by ${business.name} in ${business.serviceRegion}. Free estimates on every project.`,
   path: "/services",
 });
 
-const heroImage = { kind: "placeholder" as const, label: "Services page hero photo" };
+const heroImage = { kind: "real" as const, src: "/images/project/commercial-tpo-roof-install.jpg", alt: "Roofing crew installing a commercial low-slope roof" };
 
 export default function ServicesPage() {
   return (
@@ -30,7 +30,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow={business.serviceRegion}
         title="Our services"
-        subtitle="[REPLACE] One line summarizing the full range of services, start to finish."
+        subtitle="Roof replacement, repair, storm damage restoration, and new construction roofing — residential and commercial."
         image={heroImage}
       />
 
