@@ -19,8 +19,7 @@ export const GA4_ID = "REPLACE_WITH_GA4_ID";
 export const META_PIXEL_ID = "REPLACE_WITH_META_PIXEL_ID";
 
 // [NEEDS INPUT] real production domain
-// TODO: swap to the real custom domain (e.g. xtremeroofingvegas.com) once one is connected in Vercel.
-export const SITE_URL = "https://roofing-website-template-omega.vercel.app";
+export const SITE_URL = "https://www.xtremeroofing.net";
 
 export const business = {
   name: "Xtreme Roofing",
