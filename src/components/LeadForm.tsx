@@ -86,12 +86,12 @@ export default function LeadForm({
         </div>
       )}
 
-      <div style={{ height: GHL_FORM_HEIGHT }}>
+      <div>
         <iframe
           ref={iframeRef}
           src={`https://api.leadconnectorhq.com/widget/form/${GHL_FORM_ID}`}
           id={wrapperId}
-          style={{ width: "100%", height: "100%", border: "none", borderRadius: "8px" }}
+          style={{ width: "100%", minHeight: GHL_FORM_HEIGHT, border: "none", borderRadius: "8px" }}
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
           data-trigger-value=""
